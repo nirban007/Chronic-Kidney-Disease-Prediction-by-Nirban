@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dr. 007</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/css/bootstrap.min.css')}}">  
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/css/style.css')}}">  
+
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center">
+            <a class="navbar-brand" href="#">{{ navTitle }}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{url_for('Home')}}">Home<span
+                                class=" sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('About')}}">About Application</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <a href="{{url_for('About')}}"></a>
+    </div>  
+    <div style="color:black;" class="container">
+        <h2 class='container-heading'><span class="heading_font">Kidney Disease Prediction</span></h2>
+    </div>
+
+    <div style="color:black;" class="ml-container">
+        <form action="{{ url_for('predict') }}" method="POST">
+            <br>
+            <br>
+            <h3>Specific Gravity</h3>
+            <input id="first" name="sg" placeholder="Ex: (1.005,1.010,1.015,1.020,1.025)" required="required">
+            <br>
+            <h3>Hyper Tension</h3>
+            <input id="second" name="htn" placeholder="Yes = 1, No=0" required="required">
+            <br>
+            <h3>Hemoglobin</h3>
+            <input id="third" name="hemo" placeholder="in gms" required="required">
+            <br>
+            <h3>Diabetes Mellitus</h3>
+            <input id="fourth" name="dm" placeholder="Yes = 1, No=0" required="required">
+            <br>
+            <h3>Albumin</h3>
+            <input id="fifth" name="al" placeholder="(0,1,2,3,4,5)" required="required">
+            <br>
+            <h3>Appetite</h3>
+            <input id="sixth" name="appet" placeholder="Good = 1, Poor = 0" required="required">
+            <br>
+            <h3>Red Blood Cell Count</h3>
+            <input id="seventh" name="rc" placeholder="in Millions/cmm" required="required">
+            <h3>Pus Cell</h3>
+            <input id="eight" name="pc" placeholder="Normal = 0, Abnormal = 1" required="required">
+            <br>
+            <br>
+            <br>
+            <button id="sub" type="submit ">Submit</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class='footer-description';><marquee>©2022 nirban007 & nadim</marquee></p>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
+
+

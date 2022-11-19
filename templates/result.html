@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronic Kidney Disease Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style/css/result.css')}}">  
+</head>
+
+<body>
+
+    <div style="color:black;" class="container">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2 class='container-heading'><span class="heading_font">Kidney Disease Prediction</span></h2>
+
+        <br><br><br><br>
+
+        <!-- Result -->
+		<div style="color:black;" class="results">
+			{% if prediction==1 %}
+				<h1><span class='danger'>Oops! 🙁<br><br>You may have  KIDNEY DISEASE.<br><br>Please Consult Doctor.</span></h1>
+                <br><br><br><br><br><br>
+				<img class="gif" src="{{ url_for('static', filename='no.gif')}}" alt="STROKE Image">
+			{% elif prediction==0 %}
+				<h1><span class='safe'>🎉 Congratulation! 🎉<br><br>Your kidney Condition Is Quite Better.</span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='yes.gif')}}" alt="Not STROKE Image">
+			{% endif %}
+		</div>
+        </form>
+
+    </div>
+    <div>
+            <br><br> <br><br><br><br><br><br><br><br>
+
+            <p class='footer-description'><marquee>©2022 nirban007 & nadim</marquee></p>
+
+    </div>
+</body>
+
+</html>
